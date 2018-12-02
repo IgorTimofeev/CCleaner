@@ -1,0 +1,16 @@
+{
+appmarket = "App market",
+VK = "VK Client",
+MineIDE = "MineIDE",
+Pictures = "Pictures",
+delcvk = "delete cache",
+vkt = "Deleted: authorization data (login, passport)",
+delcapp = "delete cache",
+deltapp = "Delete: icons of applications that were shown to you in the catalog for the first time.",
+delc = "cache deleted",
+deltmine = "reset: Config (syntax highlighting color, cursor parameters)",
+delbmine = "reset config",
+minea = "cache reseting",
+deltpic = "Deleted: deletes the .pic files, but only in the Pictures folder.",
+delbpic = "Delete",
+}
