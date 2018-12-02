@@ -13,4 +13,6 @@ delbmine = "reset config",
 minea = "cache reseting",
 deltpic = "Deleted: deletes the .pic files, but only in the Pictures folder.",
 delbpic = "Delete",
+Author = "Author",
+Authort = "Posted by: Fronun, helped a bit: MineCR. The program has long lay on the raid",
 }
