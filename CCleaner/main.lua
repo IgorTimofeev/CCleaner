@@ -50,7 +50,7 @@ local vkbutton = pizdes2:addChild(GUI.button(2, 2, 30, 3, 0x787878, 0xE1E1E1, 0x
  pizdes4.hidden = true
  
  minebutton.onTouch = function()
- filesystem.remove("/MineOS/System/Application data/MineIDE/Config9.cfg")
+ filesystem.remove("/MineOS/System/Application data/MineCode IDE/Config9.cfg")
  end
  
  pizdes4:addChild(GUI.text(1, 1, 0x787878, localization.deltpic))
