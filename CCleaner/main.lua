@@ -10,8 +10,6 @@ local localization = MineOSCore.getLocalization(filesystem.path(getCurrentScript
 local mainContainer, window = MineOSInterface.addWindow(GUI.tabbedWindow(1, 1, 110, 29))
 local layout = window:addChild(GUI.layout(1, 4, 1, 1, 1, 1))
 
---------------------------------------------------------------------------------
-
 local function addText(text)
 	layout:addChild(GUI.text(1, 1, 0x787878, text))
 end
