@@ -27,16 +27,9 @@ local function addTab(text, func)
   end
 end
 
-
  local function DrawImage(pic)
 return layout:addChild(GUI.image(2, 2, image.load(pic)))
  end
- 
- local function applistik()
- addText(localization.Soon)
- end
- 
-
 
 -- main
 addTab(localization.main, function()
@@ -103,13 +96,6 @@ DrawImage(scriptDirectory .. "Icons/Image.pic")
   end
 end)
 
-
--- SAS
-addTab(localization.app, function()
-  --addText(localization.applist)
---   layout:addChild(GUI.textBox(1, 1, 36, 1, nil, 0xA5A5A5, {localization.applist}, 1, 0, 0, true, true))
-  applistik()
-end)
 
 -- Window resizing
 window.onResize = function(width, height)
