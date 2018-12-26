@@ -1,4 +1,4 @@
 # CCleaner
 Software soft cleaning MineOS cache
 
-https://i.imgur.com/GbgzhDY.mp4
+![]https://i.imgur.com/GbgzhDY.mp4
