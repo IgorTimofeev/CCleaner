@@ -8,7 +8,7 @@ local image = require("image")
 local scriptDirectory = MineOSCore.getCurrentScriptDirectory()
 local localization = MineOSCore.getLocalization(filesystem.path(getCurrentScript()) .. "Localization/")
 
-local application, window = MineOSInterface.addWindow(GUI.filledWindow(1, 1, 118, 29, 0x4B4B4B))
+local application, window = MineOSInterface.addWindow(GUI.filledWindow(1, 1, 112, 29, 0x4B4B4B))
 
 
 local list = window:addChild(GUI.list(1, 4, 22, window.height - 3, 3, 0, 0x2D2D2D, 0x696969, 0x2D2D2D, 0x696969, 0x4B4B4B, 0xC3C3C3))
