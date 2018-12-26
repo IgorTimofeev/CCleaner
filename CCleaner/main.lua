@@ -12,7 +12,7 @@ local application, window = MineOSInterface.addWindow(GUI.tabbedWindow(1, 1, 110
 local layout = window:addChild(GUI.layout(1, 4, 1, 1, 1, 1))
 
 local function addText(text)
-  layout:addChild(GUI.label(application.width, application.height, 0x787878, text))
+  layout:addChild(GUI.text(application.width, application.height, 0x787878, text))
 end
 
 local function addButton(text)
