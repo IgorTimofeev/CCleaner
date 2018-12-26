@@ -12,7 +12,7 @@ local application, window = MineOSInterface.addWindow(GUI.tabbedWindow(1, 1, 110
 local layout = window:addChild(GUI.layout(1, 4, 1, 1, 1, 1))
 
 local function addText(text)
-  layout:addChild(GUI.label(1, 1, 0x787878, text))
+  layout:addChild(GUI.label(application.width, application.height, 0x787878, text))
 end
 
 local function addButton(text)
@@ -23,13 +23,13 @@ local function addTab(text, func)
   window.tabBar:addItem(text).onTouch = function()
     layout:removeChildren()
     func()
-    application:draw() 
+    application:draw()
   end
 end
 
- local function DrawImage(pic)
-return layout:addChild(GUI.image(2, 2, image.load(pic)))
- end
+local function DrawImage(pic)
+	return layout:addChild(GUI.image(2, 2, image.load(pic)))
+end
 
 -- main
 addTab(localization.main, function()
