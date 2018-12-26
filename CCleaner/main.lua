@@ -23,7 +23,7 @@ local function addTab(text, func)
   window.tabBar:addItem(text).onTouch = function()
     layout:removeChildren()
     func()
-    application:drawOnScreen()
+    application:drawOnScreen() -- ну йобана как его исправить?
   end
 end
 
