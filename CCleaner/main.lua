@@ -23,7 +23,7 @@ local function addTab(text, func)
   window.tabBar:addItem(text).onTouch = function()
     layout:removeChildren()
     func()
-    mainContainer:drawOnScreen()
+    application:drawOnScreen()
   end
 end
 
