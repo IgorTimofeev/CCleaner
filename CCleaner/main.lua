@@ -8,7 +8,7 @@ local image = require("image")
 local scriptDirectory = MineOSCore.getCurrentScriptDirectory()
 local localization = MineOSCore.getLocalization(filesystem.path(getCurrentScript()) .. "Localization/")
 
-local mainContainer, window = MineOSInterface.addWindow(GUI.tabbedWindow(1, 1, 110, 29))
+local application, window = MineOSInterface.addWindow(GUI.tabbedWindow(1, 1, 110, 29))
 local layout = window:addChild(GUI.layout(1, 4, 1, 1, 1, 1))
 
 local function addText(text)
@@ -23,13 +23,13 @@ local function addTab(text, func)
   window.tabBar:addItem(text).onTouch = function()
     layout:removeChildren()
     func()
-    mainContainer:drawOnScreen()
+    application:draw()
   end
 end
 
- local function DrawImage(pic)
-return layout:addChild(GUI.image(2, 2, image.load(pic)))
- end
+local function DrawImage(pic)
+	return layout:addChild(GUI.image(2, 2, image.load(pic)))
+end
 
 -- main
 addTab(localization.main, function()
