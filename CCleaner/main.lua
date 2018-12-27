@@ -9,7 +9,7 @@ local scriptDirectory = MineOSCore.getCurrentScriptDirectory()
 local localization = MineOSCore.getLocalization(filesystem.path(getCurrentScript()) .. "Localization/")
 
 local application, window = MineOSInterface.addWindow(GUI.filledWindow(1, 1, 112, 29, 0x4B4B4B))
-window.backgroundPanel.colors.transparency = 0.2
+window.backgroundPanel.colors.transparency = 0.1
 
 local list = window:addChild(GUI.list(1, 4, 22, window.height - 3, 3, 0, 0x2D2D2D, 0x696969, 0x2D2D2D, 0x696969, 0x4B4B4B, 0xC3C3C3))
 local listCover = window:addChild(GUI.panel(1, 1, list.width, 3, 0x3C3C3C))
