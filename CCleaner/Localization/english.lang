@@ -27,4 +27,6 @@ main1 = "CCleaner application, created to clear the MineOS cache.",
 app  = "Applications",
 applist = "List applications: ",
 Soon = "Soon.....",
+Weather = "Weather",
+WeatherT = "Reset config application Weather",
 }
