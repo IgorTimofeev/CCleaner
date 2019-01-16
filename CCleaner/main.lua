@@ -129,5 +129,14 @@ actionButtons.maximize:remove()
  addTab(localization.Author, function()
  addText(localization.Authort)
  end)
+
+list.eventHandler = function(application, list, e1, e2, e3, e4, e5)
+  if e1 == "scroll" then
+    local horizontalMargin, verticalMargin = list:getMargin()
+    list:setMargin(horizontalMargin, math.max(-list.itemSize * (#list.children - 1), math.min(0, verticalMargin + e5)))
+    
+    application:draw()
+  end
+end
  
  list:getItem(1).onTouch()
