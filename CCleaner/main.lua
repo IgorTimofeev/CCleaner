@@ -1,14 +1,14 @@
 local GUI = require("GUI")
-local MineOSInterface = require("MineOSInterface")
-local MineOSCore = require("MineOSCore")
-local filesystem = require("filesystem")
-local image = require("image")
+local system = require("System")
+local filesystem = require("Filesystem")
+local image = require("Image")
 
 --------------------------------------------------------------------------------
-local scriptDirectory = MineOSCore.getCurrentScriptDirectory()
-local localization = MineOSCore.getLocalization(filesystem.path(getCurrentScript()) .. "Localization/")
 
-local application, window = MineOSInterface.addWindow(GUI.filledWindow(1, 1, 112, 29, 0xF0F0F0))
+local scriptDirectory = filesystem.path(system.getCurrentScript())
+local localization = system.getLocalization(scriptDirectory .. "Localization/")
+
+local workspace, window = system.addWindow(GUI.filledWindow(1, 1, 112, 29, 0xF0F0F0))
 
 local list = window:addChild(GUI.list(1, 4, 22, window.height - 3, 3, 0, 0x2D2D2D, 0x696969, 0x2D2D2D, 0x696969, 0xF0F0F0, 0x2D2D2D))
 local listCover = window:addChild(GUI.panel(1, 1, list.width, 3, 0x696969))
@@ -19,12 +19,12 @@ local function addTab(text, func)
    list:addItem(text).onTouch = function()
     layout:removeChildren()
     func()
-    application:draw()
+    workspace:draw()
   end
 end
 
 local function addText(text)
-  layout:addChild(GUI.text(application.width, application.height, 0x696969, text))
+  layout:addChild(GUI.text(workspace.width, workspace.height, 0x696969, text))
 end
 
 local function addButton(text)
@@ -44,7 +44,7 @@ actionButtons.minimize.onTouch = function()
 end
 
 actionButtons.close.onTouch = function()
-  window:close()
+  window:remove()
 end
 
 actionButtons.maximize.onTouch = function()
@@ -128,12 +128,12 @@ end
  addText(localization.Authort)
  end)
 
-list.eventHandler = function(application, list, e1, e2, e3, e4, e5)
+list.eventHandler = function(workspace, list, e1, e2, e3, e4, e5)
   if e1 == "scroll" then
     local horizontalMargin, verticalMargin = list:getMargin()
     list:setMargin(horizontalMargin, math.max(-list.itemSize * (#list.children - 1), math.min(0, verticalMargin + e5)))
     
-    application:draw()
+    workspace:draw()
   end
 end
  
