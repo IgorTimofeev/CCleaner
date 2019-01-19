@@ -11,7 +11,7 @@ local localization = MineOSCore.getLocalization(filesystem.path(getCurrentScript
 local application, window = MineOSInterface.addWindow(GUI.filledWindow(1, 1, 112, 29, 0xF0F0F0))
 
 local list = window:addChild(GUI.list(1, 4, 22, window.height - 3, 3, 0, 0x2D2D2D, 0x696969, 0x2D2D2D, 0x696969, 0xF0F0F0, 0x2D2D2D))
-local listCover = window:addChild(GUI.panel(1, 1, list.width, 3, 0x696969))
+local listCover = window:addChild(GUI.panel(1, 1, list.width, 3, 0x2D2D2D))
 local layout = window:addChild(GUI.layout(list.width + 1, 1, window.width - list.width, window.height, 1, 1))
 
 
