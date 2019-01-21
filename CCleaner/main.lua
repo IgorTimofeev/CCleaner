@@ -9,7 +9,7 @@ local paths = require("Paths")
    local scriptDirectory = filesystem.path(system.getCurrentScript())
    local localization = system.getLocalization(scriptDirectory .. "Localization/")
  
-   local workspace, window = system.addWindow(GUI.filledWindow(1, 1, 112, 29, 0xF0F0F0))
+   local workspace, window = system.addWindow(GUI.filledWindow(1, 1, 118, 31, 0xF0F0F0))
  
    local list = window:addChild(GUI.list(1, 4, 22, window.height - 3, 3, 0, 0x2D2D2D, 0x696969, 0x2D2D2D, 0x696969, 0xF0F0F0, 0x2D2D2D))
    local listCover = window:addChild(GUI.panel(1, 1, list.width, 3, 0x2D2D2D))
