@@ -30,4 +30,5 @@ applist = "Список приложений: ",
 Soon = "Скоро....",
 Weather = "Weather",
 WeatherT = "Сбросить конфиг приложений Weather",
+greeting = "Добро пожаловать! ",
 }
