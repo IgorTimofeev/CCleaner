@@ -57,7 +57,7 @@ local p = "Icons/"
 -- main
  addTab(localization.main, function()
    DrawImage("Icon.pic")
-   addText(localization.main1)
+   addText(localization.greeting)
  end)
  
  
