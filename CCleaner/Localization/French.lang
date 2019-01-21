@@ -30,4 +30,5 @@ applist = "Liste des applications:",
 Soon = "Bientôt ....",
 Weather = "Weather",
 WeatherT = "Réinitialiser la configuration de l'application Weather",
+greeting = "Bienvenue! ",
 }
