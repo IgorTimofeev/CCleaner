@@ -141,4 +141,12 @@ list.eventHandler = function(workspace, list, e1, e2, e3, e4, e5)
   end
 end
  
+window.onResize = function(width, height)
+ window.backgroundPanel.width = width
+ window.backgroundPanel.height = height
+ layout.width = window.backgroundPanel.width
+ layout.height = window.backgroundPanel.height
+ list.height = layout.height
+ end
+
     list:getItem(1).onTouch()
