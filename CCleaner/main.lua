@@ -112,9 +112,9 @@ local p = "Icons/"
  DrawImage(p .. "Image.pic")
       addText(localization.deltpic)
      addButton(localization.delbpic).onTouch = function()
-     filesystem.remove("/MineOS/Pictures/")
+     filesystem.remove(paths.system.pictures)
      GUI.alert(localization.pica)
-     filesystem.makeDirectory("/MineOS/Pictures/")
+     filesystem.makeDirectory(paths.system.pictures)
    end
  end)
  -- Weather
