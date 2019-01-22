@@ -31,4 +31,7 @@ Soon = "Скоро ....",
 Weather = "Weather",
 WeatherT = "Скинути конфиг додатків Weather",
 greeting = "Ласкаво просимо!",
+LAuthorizationAppMarketT = "Вийдіть з AppMarket, якщо потрібно терміново вийти з облікового запису",
+LAuthorizationAppMarketB = "Вийти",
+LAuthorizationAppMarketA = "Ви успішно вийшли з ринку App Market",
 }
