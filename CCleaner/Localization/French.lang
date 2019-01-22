@@ -31,4 +31,7 @@ Soon = "Bientôt ....",
 Weather = "Weather",
 WeatherT = "Réinitialiser la configuration de l'application Weather",
 greeting = "Bienvenue! ",
+LAuthorizationAppMarketT = "Déconnectez-vous AppMarket si vous avez un besoin urgent de sortir de votre compte",
+LAuthorizationAppMarketB = "Déconnexion",
+LAuthorizationAppMarketA = "Vous vous êtes déconnecté avec succès du marché des applications!",
 }
