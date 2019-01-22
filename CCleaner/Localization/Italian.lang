@@ -30,4 +30,7 @@ Soon = "Presto .....",
 Weather = "Meteo",
 WeatherT = "Resetta l'applicazione di configurazione Meteo",
 greeting = "Benvenuto!",
+LAuthorizationAppMarketT = "Esegui AppMarket, se hai urgente bisogno di uscire dal tuo account",
+LAuthorizationAppMarketB = "Esci",
+LAuthorizationAppMarketA = "Sei uscito correttamente dall'App Market!",
 }
