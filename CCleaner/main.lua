@@ -68,7 +68,12 @@ local p = "Icons/"
       addButton(localization.delcapp).onTouch = function()
      filesystem.remove(paths.user.applicationData .. "App Market/Cache")
      GUI.alert(localization.delc)
-   end
+     end
+     addText(localization.LAuthorizationAppMarketT)
+      addButton(localization.LAuthorizationAppMarketB).onTouch = function()
+        filesystem.remove(paths.user.applicationData .. "App Market/User.cfg")
+        GUI.alert(localization.LAuthorizationAppMarketA)
+     end
  end)
  
  -- IRC
