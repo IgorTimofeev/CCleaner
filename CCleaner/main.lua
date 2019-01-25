@@ -34,7 +34,7 @@ end
  
  
 local function drawIcon(pic)
-  return layout:addChild(GUI.image(2, 2, image.load(scriptDirectory .. pic)))
+  return layout:addChild(GUI.image(2, 2, image.load(SD .. pic)))
 end
  
  
