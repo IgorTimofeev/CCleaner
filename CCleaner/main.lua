@@ -1,13 +1,13 @@
 local GUI = require("GUI")
 local system = require("System")
-local filesystem = require("Filesystem")
+local fs = require("Filesystem")
 local image = require("Image")
 local paths = require("Paths")
  
 --------------------------------------------------------------------------------
  
-   local scriptDirectory = filesystem.path(system.getCurrentScript())
-   local localization = system.getLocalization(scriptDirectory .. "Localization/")
+   local SD = fs.path(system.getCurrentScript())
+   local l = system.getLocalization(SD .. "Localization/")
  
    local workspace, window = system.addWindow(GUI.filledWindow(1, 1, 118, 31, 0xF0F0F0))
  
@@ -33,7 +33,7 @@ local function addButton(text)
 end
  
  
-local function DrawImage(pic)
+local function drawIcon(pic)
   return layout:addChild(GUI.image(2, 2, image.load(scriptDirectory .. pic)))
 end
  
@@ -55,86 +55,86 @@ end
 local p = "Icons/"
  
 -- main
- addTab(localization.main, function()
-   DrawImage("Icon.pic")
-   addText(localization.greeting .. system.getUser())
+ addTab(l.main, function()
+   drawIcon("Icon.pic")
+   addText(l.greeting .. system.getUser())
  end)
  
  
  -- App Market
- addTab(localization.appmarket, function()
-      DrawImage(p .. "Iconappmarket.pic")
-      addText(localization.deltapp)
-      addButton(localization.delcapp).onTouch = function()
+ addTab(l.appmarket, function()
+      drawIcon(p .. "Iconappmarket.pic")
+      addText(l.deltapp)
+      addButton(l.delcapp).onTouch = function()
      filesystem.remove(paths.user.applicationData .. "App Market/Cache")
-     GUI.alert(localization.delc)
+     GUI.alert(l.delc)
      end
-     addText(localization.LAuthorizationAppMarketT)
-      addButton(localization.LAuthorizationAppMarketB).onTouch = function()
+     addText(l.LAuthorizationAppMarketT)
+      addButton(l.LAuthorizationAppMarketB).onTouch = function()
         filesystem.remove(paths.user.applicationData .. "App Market/User.cfg")
-        GUI.alert(localization.LAuthorizationAppMarketA)
+        GUI.alert(l.LAuthorizationAppMarketA)
      end
  end)
  
  -- IRC
- addTab(localization.IRC, function()
-   DrawImage(p .. "IconIRC.pic")
-   addText(localization.IRCT)
-   addText(localization.IRCT2)
-   addButton(localization.delbpic).onTouch = function()
+ addTab(l.IRC, function()
+   drawIcon(p .. "IconIRC.pic")
+   addText(l.IRCT)
+   addText(l.IRCT2)
+   addButton(l.delbpic).onTouch = function()
     filesystem.remove(paths.user.applicationData .. "/IRC/Config.cfg")
-    GUI.alert(localization.IRCA1)
+    GUI.alert(l.IRCA1)
    end
-  addText(localization.IRCHT)
-   addButton(localization.delbpic).onTouch = function()
+  addText(l.IRCHT)
+   addButton(l.delbpic).onTouch = function()
      filesystem.remove(paths.user.applicationData .. "/IRC/History.cfg")
-     GUI.alert(localization.IRCA2)
+     GUI.alert(l.IRCA2)
    end
  end)
  
  -- VK
- addTab(localization.VK, function()
- DrawImage(p .. "IconVK.pic")
-   addText(localization.vkt)
-   addButton(localization.delcvk).onTouch = function()
+ addTab(l.VK, function()
+ drawIcon(p .. "IconVK.pic")
+   addText(l.vkt)
+   addButton(l.delcvk).onTouch = function()
      filesystem.remove(paths.user.applicationData .. "/VK/Config5.cfg")
-     GUI.alert(localization.delc)
+     GUI.alert(l.delc)
   end
    end)
  
  -- MineIDE
- addTab(localization.MineIDE, function()
- DrawImage(p .. "IconMineIDE.pic")
-   addText(localization.deltmine)
-   addButton(localization.delbmine).onTouch = function()
+ addTab(l.MineIDE, function()
+ drawIcon(p .. "IconMineIDE.pic")
+   addText(l.deltmine)
+   addButton(l.delbmine).onTouch = function()
      filesystem.remove(paths.user.applicationData .. "/MineCode IDE")
-     GUI.alert(localization.delc)
+     GUI.alert(l.delc)
    end
  end)
  
  -- pic
- addTab(localization.Pictures, function()
- DrawImage(p .. "Image.pic")
-      addText(localization.deltpic)
-     addButton(localization.delbpic).onTouch = function()
+ addTab(l.Pictures, function()
+ drawIcon(p .. "Image.pic")
+      addText(l.deltpic)
+     addButton(l.delbpic).onTouch = function()
      filesystem.remove(paths.system.pictures)
-     GUI.alert(localization.pica)
+     GUI.alert(l.pica)
      filesystem.makeDirectory(paths.system.pictures)
    end
  end)
  -- Weather
- addTab(localization.Weather, function()
-   DrawImage(p .. "WeatherIcon.pic")
-   addText(localization.WeatherT)
-   addButton(localization.delbmine).onTouch = function()
+ addTab(l.Weather, function()
+   drawIcon(p .. "WeatherIcon.pic")
+   addText(l.WeatherT)
+   addButton(l.delbmine).onTouch = function()
      filesystem.remove(paths.user.applicationData .. "/Weather/")
-     GUI.alert(localization.IRCA1)
+     GUI.alert(l.IRCA1)
      filesystem.makeDirectory(paths.user.applicationData .. "/Weather")
      end
  end)
  -- Info
- addTab(localization.Author, function()
- addText(localization.Authort)
+ addTab(l.Author, function()
+ addText(l.Authort)
  end)
  
 list.eventHandler = function(workspace, list, e1, e2, e3, e4, e5)
