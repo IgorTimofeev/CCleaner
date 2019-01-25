@@ -52,6 +52,7 @@ actionButtons.maximize.onTouch = function()
    window:maximize()
 end
  
+ local pathsUAppData = "paths.user.applicationData"
 local p = "Icons/"
  
 -- main
@@ -66,12 +67,12 @@ local p = "Icons/"
       drawIcon(p .. "Iconappmarket.pic")
       addText(l.deltapp)
       addButton(l.delcapp).onTouch = function()
-     filesystem.remove(paths.user.applicationData .. "App Market/Cache")
+     filesystem.remove(pathsUAppData .. "App Market/Cache")
      GUI.alert(l.delc)
      end
      addText(l.LAuthorizationAppMarketT)
       addButton(l.LAuthorizationAppMarketB).onTouch = function()
-        filesystem.remove(paths.user.applicationData .. "App Market/User.cfg")
+        filesystem.remove(pathsUAppData .. "App Market/User.cfg")
         GUI.alert(l.LAuthorizationAppMarketA)
      end
  end)
@@ -82,12 +83,12 @@ local p = "Icons/"
    addText(l.IRCT)
    addText(l.IRCT2)
    addButton(l.delbpic).onTouch = function()
-    filesystem.remove(paths.user.applicationData .. "/IRC/Config.cfg")
+    filesystem.remove(pathsUAppData .. "/IRC/Config.cfg")
     GUI.alert(l.IRCA1)
    end
   addText(l.IRCHT)
    addButton(l.delbpic).onTouch = function()
-     filesystem.remove(paths.user.applicationData .. "/IRC/History.cfg")
+     filesystem.remove(pathsUAppData .. "/IRC/History.cfg")
      GUI.alert(l.IRCA2)
    end
  end)
@@ -97,7 +98,7 @@ local p = "Icons/"
  drawIcon(p .. "IconVK.pic")
    addText(l.vkt)
    addButton(l.delcvk).onTouch = function()
-     filesystem.remove(paths.user.applicationData .. "/VK/Config5.cfg")
+     filesystem.remove(pathsUAppData .. "/VK/Config5.cfg")
      GUI.alert(l.delc)
   end
    end)
@@ -107,7 +108,7 @@ local p = "Icons/"
  drawIcon(p .. "IconMineIDE.pic")
    addText(l.deltmine)
    addButton(l.delbmine).onTouch = function()
-     filesystem.remove(paths.user.applicationData .. "/MineCode IDE")
+     filesystem.remove(pathsUAppData .. "/MineCode IDE")
      GUI.alert(l.delc)
    end
  end)
@@ -127,9 +128,9 @@ local p = "Icons/"
    drawIcon(p .. "WeatherIcon.pic")
    addText(l.WeatherT)
    addButton(l.delbmine).onTouch = function()
-     filesystem.remove(paths.user.applicationData .. "/Weather/")
+     filesystem.remove(pathsUAppData .. "/Weather/")
      GUI.alert(l.IRCA1)
-     filesystem.makeDirectory(paths.user.applicationData .. "/Weather")
+     filesystem.makeDirectory(pathsUAppData .. "/Weather")
      end
  end)
  -- Info
