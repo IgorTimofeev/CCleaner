@@ -1,9 +1,4 @@
-local GUI = require("GUI")
-local system = require("System")
-local fs = require("Filesystem")
-local image = require("Image")
-local paths = require("Paths")
- 
+local GUI = require("GUI");local system = require("System"); local fs = require("Filesystem"); local image = require("Image"); local paths = require("Paths")
 --------------------------------------------------------------------------------
  
    local SD = fs.path(system.getCurrentScript())
@@ -52,9 +47,7 @@ actionButtons.maximize.onTouch = function()
    window:maximize()
 end
  
- local pathsUAppData = "paths.user.applicationData"
-local p = "Icons/"
- 
+ local pathsUAppData = "paths.user.applicationData"; local p = "Icons/" 
 -- main
  addTab(l.main, function()
    drawIcon("Icon.pic")
