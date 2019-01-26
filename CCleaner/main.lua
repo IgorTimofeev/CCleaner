@@ -3,11 +3,33 @@ local GUI = require("GUI");local system = require("System"); local fs = require(
  
    local SD = fs.path(system.getCurrentScript())
    local l = system.getLocalization(SD .. "Localization/")
+   local applicationDataPath = paths.user.applicationData .. "VK/"
+   local configPath = applicationDataPath .. "Config.cfg"
+   local stylesPath = scriptDirectory .. "Styles/"
+
+   local config = {
+	style = "Default.lua",
+	}
+
+   local function saveConfig()
+	filesystem.writeTable(configPath, config)
+end
+
+  local function loadStyle()
+	style = filesystem.readTable(stylesPath .. config.style)
+end
+
+	if
+		filesystem.exists(configPath) then
+		config = filesystem.readTable(configPath)
+		end
  
-   local workspace, window = system.addWindow(GUI.filledWindow(1, 1, 118, 31, 0xF0F0F0))
+	loadStyle()
+
+   local workspace, window = system.addWindow(GUI.filledWindow(1, 1, 118, 31, style.window))
  
-   local list = window:addChild(GUI.list(1, 4, 22, window.height - 3, 3, 0, 0x2D2D2D, 0x696969, 0x2D2D2D, 0x696969, 0xF0F0F0, 0x2D2D2D))
-   local listCover = window:addChild(GUI.panel(1, 1, list.width, 3, 0x2D2D2D))
+   local list = window:addChild(GUI.list(1, 4, 22, window.height - 3, 3, 0, style.list0, style.list1, style.list3, style.list4, style.list5, style.list6))
+   local listCover = window:addChild(GUI.panel(1, 1, list.width, 3, style.listCover))
    local layout = window:addChild(GUI.layout(list.width + 1, 1, window.width - list.width, window.height, 1, 1))
  
  
@@ -20,11 +42,11 @@ local function addTab(text, func)
 end
  
 local function addText(text)
-  layout:addChild(GUI.text(workspace.width, workspace.height, 0x696969, text))
+  layout:addChild(GUI.text(workspace.width, workspace.height, style.text, text))
 end
  
 local function addButton(text)
-  return layout:addChild(GUI.framedButton(1, 1, 30, 3, 0xD2D2D2, 0x696969, 0x878787, 0xB4B4B4, text))
+  return layout:addChild(GUI.framedButton(1, 1, 30, 3, style.button0, style.button1, style.button2, style.button3, text))
 end
  
  

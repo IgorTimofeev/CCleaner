@@ -1,0 +1,15 @@
+{
+	window = 0xF0F0F0,
+	list0 = 0x2D2D2D, 
+	list1 = 0x696969,
+	list2 = 0x2D2D2D,
+	list3 = 0x696969,
+	list4 = 0xF0F0F0,
+	list5 = 0x2D2D2D,
+	listCover = 0x2D2D2D,
+	text = 0x696969,
+	button0 = 0xD2D2D2,
+	button1 = 0x696969,
+	button2 = 0x878787,
+	button3 = 0xB4B4B4,
+}
