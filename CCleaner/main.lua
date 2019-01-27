@@ -1,15 +1,17 @@
-local GUI = require("GUI");local system = require("System"); local fs = require("Filesystem"); local image = require("Image"); local paths = require("Paths")
+ local GUI = require("GUI");local system = require("System"); local fs = require("Filesystem"); local image = require("Image"); local paths = require("Paths")
 --------------------------------------------------------------------------------
  
    local SD = fs.path(system.getCurrentScript())
    local l = system.getLocalization(SD .. "Localization/")
  
-   local workspace, window = system.addWindow(GUI.filledWindow(1, 1, 118, 31, 0xF0F0F0))
- 
+   local workspace, window = system.addWindow(GUI.filledWindow(1, 1, 118, 31, 0xC3C3C3))
+   
    local list = window:addChild(GUI.list(1, 4, 22, window.height - 3, 3, 0, 0x2D2D2D, 0x696969, 0x2D2D2D, 0x696969, 0xF0F0F0, 0x2D2D2D))
    local listCover = window:addChild(GUI.panel(1, 1, list.width, 3, 0x2D2D2D))
    local layout = window:addChild(GUI.layout(list.width + 1, 1, window.width - list.width, window.height, 1, 1))
-
+ 
+window.backgroundPanel.colors.transparency = 0.1
+ 
 local function addTab(text, func)
    list:addItem(text).onTouch = function()
     layout:removeChildren()
@@ -19,11 +21,11 @@ local function addTab(text, func)
 end
  
 local function addText(text)
-  layout:addChild(GUI.text(workspace.width, workspace.height, 0x696969, text))
+  layout:addChild(GUI.text(workspace.width, workspace.height, 0x4B4B4B, text))
 end
  
 local function addButton(text)
-  return layout:addChild(GUI.framedButton(1, 1, 30, 3, 0xD2D2D2, 0x696969, 0x878787, 0xB4B4B4, text))
+  return layout:addChild(GUI.roundedButton(1, 1, text.width + 2, 1, 0x4B4B4B, 0xE1E1E1, 0xD2D2D2, 0xE1E1E1, text))
 end
  
  
@@ -46,7 +48,7 @@ actionButtons.maximize.onTouch = function()
    window:maximize()
 end
  
- local pathsUAppData = "paths.user.applicationData"; local p = "Icons/" 
+ local pathsUAppData = "paths.user.applicationData"; local p = "Icons/"
 -- main
  addTab(l.main, function()
    drawIcon("Icon.pic")
@@ -59,12 +61,12 @@ end
       drawIcon(p .. "Iconappmarket.pic")
       addText(l.deltapp)
       addButton(l.delcapp).onTouch = function()
-     filesystem.remove(pathsUAppData .. "App Market/Cache")
+     fs.remove(pathsUAppData .. "App Market/Cache")
      GUI.alert(l.delc)
      end
      addText(l.LAuthorizationAppMarketT)
       addButton(l.LAuthorizationAppMarketB).onTouch = function()
-        filesystem.remove(pathsUAppData .. "App Market/User.cfg")
+        fs.remove(pathsUAppData .. "App Market/User.cfg")
         GUI.alert(l.LAuthorizationAppMarketA)
      end
  end)
@@ -75,12 +77,12 @@ end
    addText(l.IRCT)
    addText(l.IRCT2)
    addButton(l.delbpic).onTouch = function()
-    filesystem.remove(pathsUAppData .. "/IRC/Config.cfg")
+    fs.remove(pathsUAppData .. "/IRC/Config.cfg")
     GUI.alert(l.IRCA1)
    end
   addText(l.IRCHT)
    addButton(l.delbpic).onTouch = function()
-     filesystem.remove(pathsUAppData .. "/IRC/History.cfg")
+     fs.remove(pathsUAppData .. "/IRC/History.cfg")
      GUI.alert(l.IRCA2)
    end
  end)
@@ -90,7 +92,7 @@ end
  drawIcon(p .. "IconVK.pic")
    addText(l.vkt)
    addButton(l.delcvk).onTouch = function()
-     filesystem.remove(pathsUAppData .. "/VK/Config5.cfg")
+     fs.remove(pathsUAppData .. "/VK/Config5.cfg")
      GUI.alert(l.delc)
   end
    end)
@@ -110,9 +112,9 @@ end
  drawIcon(p .. "Image.pic")
       addText(l.deltpic)
      addButton(l.delbpic).onTouch = function()
-     filesystem.remove(paths.system.pictures)
+     fs.remove(paths.system.pictures)
      GUI.alert(l.pica)
-     filesystem.makeDirectory(paths.system.pictures)
+     fs.makeDirectory(paths.system.pictures)
    end
  end)
  -- Weather
@@ -120,9 +122,9 @@ end
    drawIcon(p .. "WeatherIcon.pic")
    addText(l.WeatherT)
    addButton(l.delbmine).onTouch = function()
-     filesystem.remove(pathsUAppData .. "/Weather/")
+     fs.remove(pathsUAppData .. "/Weather/")
      GUI.alert(l.IRCA1)
-     filesystem.makeDirectory(pathsUAppData .. "/Weather")
+     fs.makeDirectory(pathsUAppData .. "/Weather")
      end
  end)
  -- Info
@@ -146,5 +148,5 @@ window.onResize = function(width, height)
  layout.height = window.backgroundPanel.height
  list.height = layout.height
  end
-
+ 
 list:getItem(1).onTouch()
