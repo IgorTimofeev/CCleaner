@@ -135,10 +135,6 @@ addTab(l.trash, function()
      fs.makeDirectory(pathsUAppData .. "/Weather")
      end
  end)
- -- Info
- addTab(l.Author, function()
- addText(l.Authort)
- end)
  
 list.eventHandler = function(workspace, list, e1, e2, e3, e4, e5)
   if e1 == "scroll" then
@@ -148,13 +144,5 @@ list.eventHandler = function(workspace, list, e1, e2, e3, e4, e5)
     workspace:draw()
   end
 end
- 
-window.onResize = function(width, height)
- window.backgroundPanel.width = width
- window.backgroundPanel.height = height
- layout.width = window.backgroundPanel.width
- layout.height = window.backgroundPanel.height
- list.height = layout.height
- end
  
 list:getItem(1).onTouch()
