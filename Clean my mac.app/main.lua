@@ -6,8 +6,8 @@
  
    local workspace, window = system.addWindow(GUI.filledWindow(1, 1, 118, 31, 0xC3C3C3))
    
-   local list = window:addChild(GUI.list(1, 4, 22, window.height - 3, 3, 0, 0x2D2D2D, 0x696969, 0x2D2D2D, 0x696969, 0xF0F0F0, 0x2D2D2D))
-   local listCover = window:addChild(GUI.panel(1, 1, list.width, 3, 0x2D2D2D))
+  local list = window:addChild(GUI.list(1, 4, 22, window.height - 3, 3, 0, 0xD2D2D2, 0x4B4B4B, 0xD2D2D2, 0x4B4B4B, 0x878787, 0xD2D2D2))
+   local listCover = window:addChild(GUI.panel(1, 1, list.width, 3, 0xD2D2D2))
    local layout = window:addChild(GUI.layout(list.width + 1, 1, window.width - list.width, window.height, 1, 1))
  
 window.backgroundPanel.colors.transparency = 0.1
