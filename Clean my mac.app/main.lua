@@ -56,8 +56,12 @@ end
  end)
 
 addTab(l.trash, function()
-  addText(l.trash)
-  
+  drawIcon(p .. "Trash.pic")
+  addText(l.trasht)
+  addButton(l.trash).onTouch = function()
+    fs.remove(paths.user.trash)
+    fs.makeDirectory(paths.user.trash)
+    end
   end)
 
  -- App Market
