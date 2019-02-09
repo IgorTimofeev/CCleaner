@@ -34,4 +34,6 @@ greeting = "Ласкаво просимо!",
 LAuthorizationAppMarketT = "Вийдіть з AppMarket, якщо потрібно терміново вийти з облікового запису",
 LAuthorizationAppMarketB = "Вийти",
 LAuthorizationAppMarketA = "Ви успішно вийшли з ринку App Market",
+trash = "Очистити корзину",
+trasht = "Буває, що ми забуваємо видаляти вміст з кошика, і вони довго можуть зберігатися..",
 }

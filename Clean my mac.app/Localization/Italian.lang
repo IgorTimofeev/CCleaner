@@ -33,4 +33,6 @@ greeting = "Benvenuto!",
 LAuthorizationAppMarketT = "Esegui AppMarket, se hai urgente bisogno di uscire dal tuo account",
 LAuthorizationAppMarketB = "Esci",
 LAuthorizationAppMarketA = "Sei uscito correttamente dall'App Market!",
+trash = "Empty trash",
+trasht = "Succede che ci dimentichiamo di cancellare il contenuto della spazzatura e possono essere conservati per molto tempo..",
 }

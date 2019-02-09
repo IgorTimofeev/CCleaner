@@ -55,9 +55,9 @@ end
    addText(l.greeting .. system.getUser())
  end)
 
-addTab(l.localization, function()
-  addText(l.localizationt)
-  addText(l.localizationt2)
+addTab(l.trash, function()
+  addText(l.trash)
+  
   end)
 
  -- App Market
