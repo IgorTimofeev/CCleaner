@@ -35,4 +35,5 @@ LAuthorizationAppMarketT = "Вийдіть з AppMarket, якщо потрібн
 LAuthorizationAppMarketB = "Вийти",
 LAuthorizationAppMarketA = "Ви успішно вийшли з ринку App Market",
 disk = "Місце на диску",
+diskt = "Диски",
 }

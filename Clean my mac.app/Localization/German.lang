@@ -34,4 +34,5 @@ LAuthorizationAppMarketT = "Melden Sie sich von AppMarket ab, wenn Sie dringend 
 LAuthorizationAppMarketB = "Logout",
 LAuthorizationAppMarketA = "Sie haben sich erfolgreich vom App Market abgemeldet",
 disk = "Speicherplatz",
+distt = "",
 }

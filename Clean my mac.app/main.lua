@@ -56,7 +56,9 @@ end
  end)
  
 addTab(l.disk, function()
+  addText(l.diskt)
   end)
+
 
  -- App Market
  addTab(l.appmarket, function()
