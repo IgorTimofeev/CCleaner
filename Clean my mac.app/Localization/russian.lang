@@ -34,4 +34,5 @@ greeting = "Добро пожаловать! ",
 LAuthorizationAppMarketT = "Выйти из аккаунта AppMarket, если вам срочно нужно выйти из аккаунта",
 LAuthorizationAppMarketB = "Выйти из аккаунта",
 LAuthorizationAppMarketA = "Вы успешно вышли из аккаунта App Market!",
+disk = "Место на диске",
 }

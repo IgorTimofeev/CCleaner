@@ -55,7 +55,9 @@ end
    addText(l.greeting .. system.getUser())
  end)
  
- 
+addTab(l.disk, function()
+  end)
+
  -- App Market
  addTab(l.appmarket, function()
       drawIcon(p .. "Iconappmarket.pic")
