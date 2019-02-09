@@ -33,6 +33,4 @@ greeting = "Benvenuto!",
 LAuthorizationAppMarketT = "Esegui AppMarket, se hai urgente bisogno di uscire dal tuo account",
 LAuthorizationAppMarketB = "Esci",
 LAuthorizationAppMarketA = "Sei uscito correttamente dall'App Market!",
-disk = "Spazio su disco",
-diskt = "disco",
 }

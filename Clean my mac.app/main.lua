@@ -54,11 +54,11 @@ end
    drawIcon("Icon.pic")
    addText(l.greeting .. system.getUser())
  end)
- 
-addTab(l.disk, function()
-  addText(l.diskt)
-  end)
 
+addTab(l.localization, function()
+  addText(l.localizationt)
+  addText(l.localizationt2)
+  end)
 
  -- App Market
  addTab(l.appmarket, function()
