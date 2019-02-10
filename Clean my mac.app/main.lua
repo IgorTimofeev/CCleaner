@@ -10,7 +10,7 @@
    local listCover = window:addChild(GUI.panel(1, 1, list.width, 3, 0xD2D2D2))
    local layout = window:addChild(GUI.layout(list.width + 1, 1, window.width - list.width, window.height, 1, 1))
  
-window.backgroundPanel.colors.transparency = 0.1
+window.backgroundPanel.colors.transparency = 0.2
  
 local function addTab(text, func)
    list:addItem(text).onTouch = function()
@@ -42,10 +42,6 @@ end
  
 actionButtons.close.onTouch = function()
   window:remove()
-end
- 
-actionButtons.maximize.onTouch = function()
-   window:maximize()
 end
  
  local pathsUAppData = "paths.user.applicationData"; local p = "Icons/"
