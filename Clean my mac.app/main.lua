@@ -43,16 +43,20 @@ end
 actionButtons.close.onTouch = function()
   window:remove()
 end
+
+actionButtons.maximize.onTouch = function()
+	window:maximize()
+end
  
- local pathsUAppData = "paths.user.applicationData"; local p = "Icons/"
+ local pathsUAppData = "paths.user.applicationData"; local p = "Icons/"; 
 -- main
  addTab(l.main, function()
    drawIcon("Icon.pic")
    addText(l.greeting .. system.getUser())
  end)
-
+-- Trash
 addTab(l.trash, function()
-  drawIcon(p .. "Trash.pic")
+  drawIcon(paths.system.icons .. "Trash.pic")
   addText(l.trasht)
   addButton(l.trash).onTouch = function()
     fs.remove(paths.user.trash)
@@ -142,3 +146,10 @@ list.eventHandler = function(workspace, list, e1, e2, e3, e4, e5)
 end
  
 list:getItem(1).onTouch()
+
+-- Resize
+window.onResize = function(width, height)
+  window.backgroundPanel.width, window.backgroundPanel.height = width, height
+  layout.height = height
+  list.height = layout.height
+end
