@@ -33,7 +33,11 @@ local function drawIcon(pic)
   return layout:addChild(GUI.image(2, 2, image.load(SD .. pic)))
 end
  
- 
+ local function resetConfig(config)
+  fs.remove(paths.user.applicationData .. config)
+end
+
+
 local actionButtons = window:addChild(GUI.actionButtons(3, 2, true))
  
 actionButtons.minimize.onTouch = function()
@@ -48,7 +52,7 @@ actionButtons.maximize.onTouch = function()
 	window:maximize()
 end
  
- local pathsUAppData = "paths.user.applicationData"; local p = "Icons/"; 
+  local p = "Icons/"; 
 -- main
  addTab(l.main, function()
    drawIcon("Icon.pic")
@@ -69,12 +73,12 @@ addTab(l.trash, function()
       drawIcon(p .. "Iconappmarket.pic")
       addText(l.deltapp)
       addButton(l.delcapp).onTouch = function()
-     fs.remove(pathsUAppData .. "App Market/Cache")
+     resetConfig("App Market/Cache")
      GUI.alert(l.delc)
      end
      addText(l.LAuthorizationAppMarketT)
       addButton(l.LAuthorizationAppMarketB).onTouch = function()
-        fs.remove(pathsUAppData .. "App Market/User.cfg")
+        resetConfig("App Market/User.cfg")
         GUI.alert(l.LAuthorizationAppMarketA)
      end
  end)
@@ -85,12 +89,12 @@ addTab(l.trash, function()
    addText(l.IRCT)
    addText(l.IRCT2)
    addButton(l.delbpic).onTouch = function()
-    fs.remove(pathsUAppData .. "/IRC/Config.cfg")
+    resetConfig("/IRC/Config.cfg")
     GUI.alert(l.IRCA1)
    end
   addText(l.IRCHT)
    addButton(l.delbpic).onTouch = function()
-     fs.remove(pathsUAppData .. "/IRC/History.cfg")
+     resetConfig("/IRC/History.cfg")
      GUI.alert(l.IRCA2)
    end
  end)
@@ -100,7 +104,7 @@ addTab(l.trash, function()
  drawIcon(p .. "IconVK.pic")
    addText(l.vkt)
    addButton(l.delcvk).onTouch = function()
-     fs.remove(pathsUAppData .. "/VK/Config5.cfg")
+     resetConfig("/VK/Config5.cfg")
      GUI.alert(l.delc)
   end
    end)
@@ -110,7 +114,7 @@ addTab(l.trash, function()
  drawIcon(p .. "IconMineIDE.pic")
    addText(l.deltmine)
    addButton(l.delbmine).onTouch = function()
-     filesystem.remove(pathsUAppData .. "/MineCode IDE")
+     resetConfig("/MineCode IDE")
      GUI.alert(l.delc)
    end
  end)
@@ -130,9 +134,8 @@ addTab(l.trash, function()
    drawIcon(p .. "WeatherIcon.pic")
    addText(l.WeatherT)
    addButton(l.delbmine).onTouch = function()
-     fs.remove(pathsUAppData .. "/Weather/")
+     resetConfig("/Weather/")
      GUI.alert(l.IRCA1)
-     fs.makeDirectory(pathsUAppData .. "/Weather")
      end
  end)
  
