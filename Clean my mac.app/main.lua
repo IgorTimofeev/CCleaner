@@ -47,10 +47,6 @@ end
 actionButtons.close.onTouch = function()
   window:remove()
 end
-
-actionButtons.maximize.onTouch = function()
-	window:maximize()
-end
  
   local p = "Icons/"; 
 -- main
@@ -149,10 +145,3 @@ list.eventHandler = function(workspace, list, e1, e2, e3, e4, e5)
 end
  
 list:getItem(1).onTouch()
-
--- Resize
-window.onResize = function(width, height)
-  window.backgroundPanel.width, window.backgroundPanel.height = width, height
-  layout.height = height
-  list.height = layout.height
-end
